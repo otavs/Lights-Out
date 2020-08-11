@@ -30,8 +30,8 @@ export default function CanvasDiv() {
   </>
 
   function sidebarButton() {
-    const openIcon = portrait ? <KeyboardArrowDownIcon /> : <ChevronLeftIcon />
-    const closeIcon = portrait ? <KeyboardArrowUpIcon /> : <ChevronRightIcon />
+    const openIcon = false ? <KeyboardArrowDownIcon /> : <ChevronLeftIcon />
+    const closeIcon = false ? <KeyboardArrowUpIcon /> : <ChevronRightIcon />
     return <>
       <button onClick={() => setOpenSidebar(x => !x)}>
         {openSidebar ? openIcon : closeIcon}
