@@ -3,7 +3,7 @@ import Square from 'game/Square'
 import setupP5 from 'game/p5'
 
 const game = {
-  debug: true,
+  debug: false,
   m: 6,
   n: 6,
   showSolution: false,
