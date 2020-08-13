@@ -99,8 +99,7 @@ export default (p5, game) => {
 
   function spawnFirework() {
     const {width, height} = parent.getBoundingClientRect()
-    console.log(width)
-    const firework = new Firework(random(.3*width, .7*width), height, Math.max(width, height)/150, p5.color(`hsl(${Math.floor(Math.random()*360)}, 100%, 50%)`), 100*3, game.fireworkParticles)
+    const firework = new Firework(random(.3*width, .7*width), height, 6, p5.color(`hsl(${Math.floor(Math.random()*360)}, 100%, 50%)`), 100*3, game.fireworkParticles)
     const sqrtW = Math.sqrt(width), sqrtH = Math.sqrt(height)
     game.fireworks.push(firework)
     firework.applyForce(random(-.08*sqrtW, .08*sqrtW), random(-.45*sqrtH, -.2*sqrtH))
