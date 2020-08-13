@@ -23,9 +23,20 @@ const game = {
   solution: null,
   isImpossible: false,
   setImpossibleGUI: () => {},
+  fireworks: [],
+  fireworkParticles: [],
+  win: true,
   updateSolution() {
     [this.solution, this.isImpossible] = solve(this.matrix)
     this.setImpossibleGUI(this.isImpossible)
+    this.win = this.isSolved()
+  },
+  isSolved() {
+    for(let i = 0; i < this.m; i++)
+      for(let j = 0; j < this.n; j++)
+        if(this.matrix[i][j])
+          return false
+    return true
   },
   reset() {
     this.newGame()
@@ -42,7 +53,7 @@ const game = {
     let tries = 0
     do {
       this.updateSquares(initMatrix)
-    } while (this.isImpossible && ++tries < 250)
+    } while ((this.isImpossible && ++tries < 250) || this.win)
     if(game.debug) console.log(`tries: ${tries}`)
   },
   updateSquares(initMatrix) {

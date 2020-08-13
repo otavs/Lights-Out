@@ -15,19 +15,19 @@ export default class Square {
   }
 
   draw(p5) {
+    p5.push()
     p5.fill(this.getColor())
     p5.rect(this.x, this.y, this.w, this.h)
     if(game.showSolution && game.solution[this.i][this.j]) {
       let r = .05 * this.w,
       cx = this.x + this.w - r - .04*this.w,
       cy = this.y + this.h - r - .04*this.h
-      p5.push()
       p5.fill('#ff0000')
       p5.stroke('#ffffff')
       p5.strokeWeight(.2)
       p5.circle(cx, cy, 2*r)
-      p5.pop()
     }
+    p5.pop()
   }
 
   checkMouseClick(x, y) {

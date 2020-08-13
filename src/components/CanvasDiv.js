@@ -7,7 +7,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 import styled from 'styled-components'
 import {useGlobalState} from 'state' 
 import p5 from 'p5'
-import config from 'game/game'
+import game from 'game/game'
 
 const div = React.createRef()
 
@@ -18,7 +18,7 @@ export default function CanvasDiv() {
   
   useEffect(() => {
     new p5(p5 => {
-      config.initP5(p5)
+      game.initP5(p5)
     }, div.current)
   }, [])
   return <>
