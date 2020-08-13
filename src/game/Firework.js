@@ -29,7 +29,7 @@ export default class FireWork {
   explode() {
     this.lifespan = 0
     for(let i = 0; i < 30; i++) {
-      let particle = new FireworkParticle(this.pos.x, this.pos.y, 6, this.color, 70)
+      let particle = new FireworkParticle(this.pos.x, this.pos.y, this.size, this.color, 70)
       game.fireworkParticles.push(particle)
       const minAccY = -4, maxAccY = 1, accX = Math.abs(maxAccY-minAccY)/2
       particle.applyForce(random(-accX, accX), random(minAccY, maxAccY))
